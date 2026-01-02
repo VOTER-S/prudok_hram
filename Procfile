@@ -1,1 +1,1 @@
-web: gunicorn prudok.wsgi 
+web: gunicorn prudok.prudok.wsgi
