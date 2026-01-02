@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ news_item.title }}</title>
+    <style>
+        @font-face {
+            font-family: 'Teachers';
+            src: url("{% static 'fonts/Teachers-SemiBoldItalic.otf' %}") format('opentype');
+            font-weight: 600; /* SemiBold обычно соответствует 600 */
+            font-style: italic;
+        }
+        body {
+            ffont-family: 'Teachers', 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-style: italic;
+            margin: 0;
+            background: #f5f8fc; /* светлый фон */
+            color: #333;
+        }
+
+        header {
+            background: #2c53c0ff; /* насыщенный синий */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .images img {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        a.back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2563eb; /* ярко-синий */
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        a.back-button:hover {
+            background: #1e40af; /* темнее при наведении */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ news_item.title }}</h1>
+    </header>
+
+    <div class="content">
+        <div class="images">
+            {% if news_item.image %}
+                <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}">
+            {% endif %}
+            {% if news_item.image2 %}
+                <img src="{{ news_item.image2.url }}" alt="{{ news_item.title }}">
+            {% endif %}
+            {% if news_item.image3 %}
+                <img src="{{ news_item.image3.url }}" alt="{{ news_item.title }}">
+            {% endif %}
+            {% if news_item.image4 %}
+                <img src="{{ news_item.image4.url }}" alt="{{ news_item.title }}">
+            {% endif %}
+            {% if news_item.image5 %}
+                <img src="{{ news_item.image5.url }}" alt="{{ news_item.title }}">
+            {% endif %}
+            {% if news_item.image6 %}
+                <img src="{{ news_item.image6.url }}" alt="{{ news_item.title }}">
+            {% endif %}
+            {% if news_item.image7 %}
+                <img src="{{ news_item.image7.url }}" alt="{{ news_item.title }}">
+            {% endif %}
+        </div>
+
+        <p>{{ news_item.content }}</p>
+
+        <a href="{% url 'news_list' %}" class="back-button">← Назад к новостям</a>
+    </div>
+</body>
+</html>

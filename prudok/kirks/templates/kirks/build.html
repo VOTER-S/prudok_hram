@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Строительство</title>
+  <link rel="stylesheet" href="{% static 'css/build.css' %}">
+</head>
+<body>
+
+  <header class="build-header">
+    <h1>Проекты строительства</h1>
+    <p>Здесь вы можете ознакомиться с текущими архитектурными работами храма</p>
+  </header>
+
+  <section class="build-gallery">
+    <h2>План проекта</h2>
+    <div class="gallery-section">
+      
+      <img src="{% static 'images/Снимок экрана 2025-07-12 221418.png' %}">
+      <img src="{% static 'images/image001.png' %}" />
+    </div>
+
+    
+
+    <div class="gallery-section">
+      <h2>Фото строительства</h2>
+      <div class="photo-grid">
+        <img src="/img/IMG_1273.jpg" alt="Фото 1" />
+        <img src="/img/IMG_1265.jpg" alt="Фото 2" />
+        <img src="/img/IMG_1290.jpg" alt="Фото 3" />
+      </div>
+    </div>
+  </section>
+  <footer class="back-footer">
+    <a href="/" class="back-button">⬅ На главную</a>
+  </footer>
+  
+</body>
+</html>
